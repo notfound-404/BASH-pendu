@@ -1,8 +1,10 @@
 #! /bin/bash
-# PENDU BY P BORIS / NOTFOUND
+# HANGMAN BY P BORIS / NOTFOUND
 # LICENCE GPLv2
+
 #########################################################
 ######################  FONCTIONS #######################
+
 _iLOLDSOHARD(){
 	T=('/ \' '| |' '_o_' '<o>' '\o/')
         ( sleep 1 ; for (( j=2 ; j<40 ; j++)); do
@@ -48,6 +50,7 @@ _randomizeWord(){
         NB_INDICE="${#ALL_WORD[*]}"
         WORD=${ALL_WORD[$((RANDOM%NB_INDICE))]}
 }
+
 #########################################################
 ##################     MAIN     #########################
 #########################################################
@@ -70,8 +73,8 @@ NB_LETTER="${#WORD}"
 CPT=0
 
 clear
-### A COMMENTER, affiche le mot en bas a droite
-tput cup $(($(tput lines)-1)) $(($(tput cols)-NB_LETTER)) ; echo $WORD
+### TO COMMENT, display the word at the bottom
+# tput cup $(($(tput lines)-1)) $(($(tput cols)-NB_LETTER)) ; echo $WORD
 
 tput cup 0 30 ; echo "Pendu par les ...."
 tput cup 2 5 ; echo -e "Mot (${NB_LETTER} lettres) : ${WORD//[a-z-A-Z-0-9]/-}"
